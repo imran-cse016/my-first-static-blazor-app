@@ -1,0 +1,23 @@
+﻿@page "/freeapitesting"
+@inject HttpClient Http
+<h3>Free Api Testing</h3>
+
+
+@str
+
+@code {
+
+    string str = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            str = await Http.GetFromJsonAsync<string>("/api/FreeApiTesting");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
+    }
+}
