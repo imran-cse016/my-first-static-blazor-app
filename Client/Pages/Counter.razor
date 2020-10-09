@@ -4,10 +4,14 @@
 
 <p>Current count: @currentCount</p>
 
+<p>Name : @name</p>
+
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
+
+    public string name { get; set; } = "Imran";
 
     private void IncrementCount()
     {
