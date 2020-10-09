@@ -4,14 +4,24 @@
 
 <p>Current count: @currentCount</p>
 
-<p>Name : @name</p>
+@foreach (var item in names)
+{
+    @item
+    <br />
+}
+
+<br />
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
 
-    public string name { get; set; } = "Imran";
+    public List<string> names = new List<string>()
+    { 
+       "Pooja",
+       "Suneeta"
+    };
 
     private void IncrementCount()
     {
